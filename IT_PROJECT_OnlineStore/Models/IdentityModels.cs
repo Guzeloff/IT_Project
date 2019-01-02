@@ -30,8 +30,12 @@ namespace IT_PROJECT_OnlineStore.Models
         {
             return new ApplicationDbContext();
         }
+
 		public System.Data.Entity.DbSet<IT_PROJECT_OnlineStore.Models.Category> Categories { get; set; }
 		public System.Data.Entity.DbSet<IT_PROJECT_OnlineStore.Models.Item> Items { get; set; }
-
+		public System.Data.Entity.DbSet<IT_PROJECT_OnlineStore.Models.Cart> Carts { get; set; }
+		public System.Data.Entity.DbSet<IT_PROJECT_OnlineStore.Models.Order> Orders { get; set; }
+		public System.Data.Entity.DbSet<IT_PROJECT_OnlineStore.Models.OrderDetail> OrderDetails { get; set; }
+		public System.Data.Entity.DbSet<IT_PROJECT_OnlineStore.Models.Producer> Producers { get; set; }
 	}
 }

@@ -174,8 +174,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -184,27 +186,136 @@
     <Compile Include="Migrations\201812291753447_InitalModel.Designer.cs">
       <DependentUpon>201812291753447_InitalModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901021532455_ShoppingCart.cs" />
+    <Compile Include="Migrations\201901021532455_ShoppingCart.Designer.cs">
+      <DependentUpon>201901021532455_ShoppingCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901021637084_CartPKChanged.cs" />
+    <Compile Include="Migrations\201901021637084_CartPKChanged.Designer.cs">
+      <DependentUpon>201901021637084_CartPKChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901021755147_CheckoutMigration.cs" />
+    <Compile Include="Migrations\201901021755147_CheckoutMigration.Designer.cs">
+      <DependentUpon>201901021755147_CheckoutMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Producer.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\ShoppingStoreEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ShoppingCartViews\ShoppingCartRemove.cs" />
+    <Compile Include="ShoppingCartViews\ShoppingCartView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Adidas\Dresovi\download %281%29.jpg" />
+    <Content Include="Content\Images\Adidas\Dresovi\download %282%29.jpg" />
+    <Content Include="Content\Images\Adidas\Dresovi\download.jpg" />
+    <Content Include="Content\Images\Adidas\Dresovi\images.jpg" />
+    <Content Include="Content\Images\Adidas\Maici\BQ3041_320_320px.jpg" />
+    <Content Include="Content\Images\Adidas\Maici\CD7138.jpg" />
+    <Content Include="Content\Images\Adidas\Maici\CF1428_320_320px.jpg" />
+    <Content Include="Content\Images\Adidas\Maici\CV4571.jpg" />
+    <Content Include="Content\Images\Adidas\Maici\CW3927.jpg" />
+    <Content Include="Content\Images\Adidas\Maici\S97958_320_320px.jpg" />
+    <Content Include="Content\Images\Adidas\Patiki\adidas shoes women-881xxj.jpg" />
+    <Content Include="Content\Images\Adidas\Patiki\adidas-mens-crazyflight-x-mid-volleyball-mens-shoes-main.jpg" />
+    <Content Include="Content\Images\Adidas\Patiki\adidas-womens-deerupt-runner-sneakers.jpg" />
+    <Content Include="Content\Images\Adidas\Patiki\download.jpg" />
+    <Content Include="Content\Images\Adidas\Patiki\DP1104201617104256M.jpg" />
+    <Content Include="Content\Images\Adidas\Patiki\images.jpg" />
+    <Content Include="Content\Images\Adidas\Patiki\T0205_8011_right.jpg" />
+    <Content Include="Content\Images\Adidas\Trenerki\BQ8428_320_320px.jpg" />
+    <Content Include="Content\Images\Adidas\Trenerki\CD6365.jpg" />
+    <Content Include="Content\Images\Adidas\Trenerki\CE6792_320_320px.jpg" />
+    <Content Include="Content\Images\Adidas\Trenerki\CF1612_320_320px.jpg" />
+    <Content Include="Content\Images\Adidas\Trenerki\CY2298_320_320px.jpg" />
+    <Content Include="Content\Images\Adidas\Trenerki\DJ1458_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Dresovi\Bape-Color-Camo-Football-Jersey-Red.jpg" />
+    <Content Include="Content\Images\Champion\Dresovi\download.jpg" />
+    <Content Include="Content\Images\Champion\Maici\212193-BS501_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Maici\213121-WW002_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Maici\CHG183283-001_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Maici\CHG183283-002_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Patiki\S10189-011_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Patiki\S10196-2175_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Patiki\S10374-KK002_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Patiki\S10381-KK004_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Patiki\S20360-2192_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Trenerki\108695-3230_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Trenerki\210439-2192_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Trenerki\210794-EM501_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Trenerki\211495-EM006_320_320px.jpg" />
+    <Content Include="Content\Images\Champion\Trenerki\304454-1127_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Dresovi\61Rpk0NmamL._SX425_.jpg" />
+    <Content Include="Content\Images\Nike\Dresovi\864459-014_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Dresovi\864461-321_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Dresovi\905512-044-2.jpg" />
+    <Content Include="Content\Images\Nike\Maici\719870-639.jpg" />
+    <Content Include="Content\Images\Nike\Maici\802356-091.jpg" />
+    <Content Include="Content\Images\Nike\Maici\837010-432.jpg" />
+    <Content Include="Content\Images\Nike\Maici\838954-808.jpg" />
+    <Content Include="Content\Images\Nike\Maici\886238-355.jpg" />
+    <Content Include="Content\Images\Nike\Maici\929342-063.jpg" />
+    <Content Include="Content\Images\Nike\Maici\AJ0100-010_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Maici\AR5805-677_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Trenerki\830345-010_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Trenerki\830345-036_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Trenerki\861642-010_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Trenerki\886511-010_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Trenerki\939626-478_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Trenerki\AH7406-451_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\Патики\1_ac722af8-959d-442b-9d7a-d718a964fae8_1024x1024.png" />
+    <Content Include="Content\Images\Nike\Патики\airMax951610_v1.png" />
+    <Content Include="Content\Images\Nike\Патики\AM1ESSFA18_v1.png" />
+    <Content Include="Content\Images\Nike\Патики\nike air max 2016-048hwl.png" />
+    <Content Include="Content\Images\Nike\Патики\nike womens running shoes-669mka.png" />
+    <Content Include="Content\Images\Nike\Патики\Nike-Running-Shoes-PNG-Download-Image.png" />
+    <Content Include="Content\Images\Nike\Патики\running_shoes_PNG5785.png" />
+    <Content Include="Content\Images\Nike\Патики\Screen-Shot-2017-06-18-at-4.50.37-PM-507x300.png" />
+    <Content Include="Content\Images\UA\Dresovi\Cy9aSBdUcAAD04V.jpg" />
+    <Content Include="Content\Images\UA\Dresovi\o.jpg" />
+    <Content Include="Content\Images\UA\Dresovi\thumb.jpg" />
+    <Content Include="Content\Images\UA\Dresovi\TTYUA1245660-100-2.jpg" />
+    <Content Include="Content\Images\UA\Maici\1289586-001_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Maici\1289596-299_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Maici\1298609-100_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Maici\1298610-076.jpg" />
+    <Content Include="Content\Images\UA\Maici\1310185-819_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Maici\1325622-890.jpg" />
+    <Content Include="Content\Images\UA\Patiki\1269279-106_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Patiki\1285482-002_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Patiki\1285652-004_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Patiki\1287341-288_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Patiki\1298664-907_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Patiki\1298675-600.jpg" />
+    <Content Include="Content\Images\UA\Patiki\3000302-400_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Trenerki\1271525-003_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Trenerki\1280750-040.jpg" />
+    <Content Include="Content\Images\UA\Trenerki\1290041-963.jpg" />
+    <Content Include="Content\Images\UA\Trenerki\1298371-025_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Trenerki\1302776-001_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Trenerki\1305423-090_320_320px.jpg" />
+    <Content Include="Content\Images\UA\Trenerki\1307591-906_320_320px.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Images\Adidas\Patiki\download.webp" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -255,6 +366,9 @@
     <Content Include="Views\Store\Details.cshtml" />
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +389,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812291753447_InitalModel.resx">
       <DependentUpon>201812291753447_InitalModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901021532455_ShoppingCart.resx">
+      <DependentUpon>201901021532455_ShoppingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901021637084_CartPKChanged.resx">
+      <DependentUpon>201901021637084_CartPKChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901021755147_CheckoutMigration.resx">
+      <DependentUpon>201901021755147_CheckoutMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

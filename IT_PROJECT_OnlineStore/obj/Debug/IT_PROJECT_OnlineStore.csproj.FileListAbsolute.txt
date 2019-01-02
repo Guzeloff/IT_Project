@@ -1,4 +1,3 @@
-C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.csprojAssemblyReference.cache
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.csproj.CoreCompileInputs.cache
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\bin\IT_PROJECT_OnlineStore.dll.config
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\bin\IT_PROJECT_OnlineStore.dll
@@ -109,3 +108,7 @@ C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStor
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.pdb
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.Migrations.InitalModel.resources
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.csproj.GenerateResource.cache
+C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.Migrations.ShoppingCart.resources
+C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.Migrations.CartPKChanged.resources
+C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.csprojAssemblyReference.cache
+C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.Migrations.CheckoutMigration.resources

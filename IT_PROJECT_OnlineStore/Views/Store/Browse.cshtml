@@ -6,3 +6,11 @@
 
 <h2>Category : @Model.Name</h2>
 
+<ul>
+	@foreach (var c in Model.Items)
+	{
+		<li>
+			@Html.ActionLink(c.Title, "Details", new { id = c.ItemId })
+		</li>
+	}
+</ul>

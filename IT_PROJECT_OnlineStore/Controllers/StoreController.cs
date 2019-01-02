@@ -9,26 +9,22 @@ namespace IT_PROJECT_OnlineStore.Controllers
 {
     public class StoreController : Controller
     {
+		ApplicationDbContext dbStore = new ApplicationDbContext();
         // GET: Store
         public ActionResult Index()
         {
-			var category = new List<Category>
-			{
-				new Category {Name="Patki"},
-				new Category {Name="Trenerki"},
-				new Category {Name="Majci"}
-			};
+			var category = dbStore.Categories.ToList();
             return View(category);
         }
 		public ActionResult Browse(string category)
 		{
-			var categoryModel = new Category { Name = category };
+			var categoryModel = dbStore.Categories.Include("Items").Single(c => c.Name == category);
 			return View(categoryModel);
 			}
 		public ActionResult Details (int id)
 		{
-			var item = new Item { Title = "Item" + id };
+			var item = dbStore.Items.Find(id);
 			return View(item);
-		}
+		} 
     }
 }

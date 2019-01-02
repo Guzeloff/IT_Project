@@ -1,4 +1,4 @@
-﻿@model List<IT_PROJECT_OnlineStore.Models.Category>
+﻿@model IEnumerable<IT_PROJECT_OnlineStore.Models.Category>
 
 @{
     ViewBag.Title = "Index";
@@ -10,8 +10,8 @@
 
 </p>
 <ul>
-	@foreach (var c in Model)
+	@foreach (var category in Model)
 	{
-		<li>@Html.ActionLink(c.Name, "Browse", new { c = c.Name })</li>
+		<li>@Html.ActionLink(category.Name, "Browse", new { category = category.Name })</li>
 	}
 </ul>

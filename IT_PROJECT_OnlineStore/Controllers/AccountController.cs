@@ -21,7 +21,13 @@ namespace IT_PROJECT_OnlineStore.Controllers
         public AccountController()
         {
         }
-
+		private void MigrateShoppingCart(string Email)
+		{
+			// Za sekoj logiran usero da mu se prikaze negovata kosnicka / "gi raspoznava preku email"
+			var cart = ShoppingCart.GetCart(this.HttpContext);
+			cart.MigrateCart(Email);
+			Session[ShoppingCart.CartSessionKey] = Email;
+		}
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
@@ -79,6 +85,7 @@ namespace IT_PROJECT_OnlineStore.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+					MigrateShoppingCart(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -156,7 +163,7 @@ namespace IT_PROJECT_OnlineStore.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+					MigrateShoppingCart(model.Email);
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
