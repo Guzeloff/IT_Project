@@ -110,5 +110,5 @@ C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStor
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.csproj.GenerateResource.cache
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.Migrations.ShoppingCart.resources
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.Migrations.CartPKChanged.resources
-C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.csprojAssemblyReference.cache
 C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.Migrations.CheckoutMigration.resources
+C:\Users\Angel Guzelov\source\repos\IT_PROJECT_OnlineStore\IT_PROJECT_OnlineStore\obj\Debug\IT_PROJECT_OnlineStore.csprojAssemblyReference.cache

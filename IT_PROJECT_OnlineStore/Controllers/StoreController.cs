@@ -16,6 +16,15 @@ namespace IT_PROJECT_OnlineStore.Controllers
 			var category = dbStore.Categories.ToList();
             return View(category);
         }
+
+		[ChildActionOnly]
+		public ActionResult CategoryMenu()
+		{
+			var category = dbStore.Categories.ToList();
+
+			return PartialView(category);
+		}
+
 		public ActionResult Browse(string category)
 		{
 			var categoryModel = dbStore.Categories.Include("Items").Single(c => c.Name == category);

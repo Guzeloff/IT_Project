@@ -14,6 +14,7 @@ namespace IT_PROJECT_OnlineStore.Models
 		public int CategoryId { get; set; }
 		public int ProducerID { get; set; }
 
+		public virtual List<OrderDetail> OrderDetails { get; set; }
 		public virtual Producer Producer { get; set; }
 		public virtual Category Category { get; set; }
 	}

@@ -15,6 +15,7 @@ namespace IT_PROJECT_OnlineStore.Controllers
 		// get method
         public ActionResult AddressAndPayment()
         {
+
 			
             return View();
         }
@@ -45,12 +46,14 @@ namespace IT_PROJECT_OnlineStore.Controllers
 
 					var cart = ShoppingCart.GetCart(this.HttpContext); // ja procesirame naracakta
 					cart.CreateOrder(order); // kreirame naracka
-					return RedirectToAction("Complete", new { id = order.OrderId });  // i redirektiram na complete akcijata
-					// 
+					return RedirectToAction("Complete","Checkout", new { id = order.OrderId });  // i redirektira na complete akcijata
+																								 
+					
 				}
 			}
 			catch
 			{
+				dbstore.SaveChanges();
 				return View(order);
 			}
 		}

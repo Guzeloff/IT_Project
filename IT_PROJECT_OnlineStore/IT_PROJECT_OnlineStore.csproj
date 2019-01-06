@@ -48,6 +48,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -157,9 +160,6 @@
     <Reference Include="Microsoft.Owin.Security.OAuth">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
       <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
     </Reference>
@@ -220,6 +220,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Adidas\adidasslideshow.png" />
     <Content Include="Content\Images\Adidas\Dresovi\download %281%29.jpg" />
     <Content Include="Content\Images\Adidas\Dresovi\download %282%29.jpg" />
     <Content Include="Content\Images\Adidas\Dresovi\download.jpg" />
@@ -271,6 +272,7 @@
     <Content Include="Content\Images\Nike\Maici\929342-063.jpg" />
     <Content Include="Content\Images\Nike\Maici\AJ0100-010_320_320px.jpg" />
     <Content Include="Content\Images\Nike\Maici\AR5805-677_320_320px.jpg" />
+    <Content Include="Content\Images\Nike\nikeslideshow.png" />
     <Content Include="Content\Images\Nike\Trenerki\830345-010_320_320px.jpg" />
     <Content Include="Content\Images\Nike\Trenerki\830345-036_320_320px.jpg" />
     <Content Include="Content\Images\Nike\Trenerki\861642-010_320_320px.jpg" />
@@ -309,6 +311,7 @@
     <Content Include="Content\Images\UA\Trenerki\1302776-001_320_320px.jpg" />
     <Content Include="Content\Images\UA\Trenerki\1305423-090_320_320px.jpg" />
     <Content Include="Content\Images\UA\Trenerki\1307591-906_320_320px.jpg" />
+    <Content Include="Content\Images\UA\UA.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -369,6 +372,8 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
+    <Content Include="Views\Store\CategoryMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

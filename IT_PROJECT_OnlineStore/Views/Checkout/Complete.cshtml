@@ -1,4 +1,4 @@
-﻿@model int
+﻿@model int?
 @{
 	ViewBag.Title = "Потврдата е успешна";
 }
@@ -6,6 +6,6 @@
 <p>Ви благодариме , вашата шифра е: @Model</p>
 <p>
 	Ако сакате да продожите со пазарувањето
-	@Html.ActionLink("store",
+	@Html.ActionLink("Store",
 "Index", "Home")
 </p>
