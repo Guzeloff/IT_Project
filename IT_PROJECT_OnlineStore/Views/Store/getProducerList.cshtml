@@ -1,0 +1,21 @@
+﻿@model IEnumerable<IT_PROJECT_OnlineStore.Models.Producer>
+
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		Брендови<span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu" role="menu" id="Mytab">
+		@foreach (var prod in Model)
+		{
+
+		<li role="presentation">
+			<a href="#" aria-controls="nike" role="tab" data-toggle="tab">
+				@Html.ActionLink(prod.Name, "BrowseBrand", new { prod = prod.Name })
+			</a>
+		</li>
+
+		}
+
+
+	</ul>
+</li>

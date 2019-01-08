@@ -19,20 +19,19 @@
 				</button>
 				@Html.ActionLink("СпортСити", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 			</div>
-			<div class="navbar-collapse collapse">
+			
+			<div class="navbar-collapse collapse" id=".navbar-collapse">
 				<ul class="nav navbar-nav">
-
-					<li>@Html.ActionLink("Брендови", "Index", "Store")</li>
+					 @{Html.RenderAction("getProducerList", "Store"); }
+					 @*<li>@Html.ActionLink("Категори", "Index", "Store")</li> 
+						 za katergorii na berendovi
+						 *@ 
 					<li>@{Html.RenderAction("CartSummary", "ShoppingCart"); }</li>
 					<li>@Html.ActionLink("За нас", "About", "Home")</li>
 					<li>@Html.ActionLink("Kонтакт", "Contact", "Home")</li>
 
-
-
-
-
-
 				</ul>
+					
 				@Html.Partial("_LoginPartial")
 			</div>
 		</div>

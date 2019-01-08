@@ -9,5 +9,6 @@ namespace IT_PROJECT_OnlineStore.Models
 	{
 		public int  ProducerId { get; set; }
 		public String Name { get; set; }
+		public virtual List<Item> Items { get; set; }
 	}
 }

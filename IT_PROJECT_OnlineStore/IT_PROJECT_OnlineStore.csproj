@@ -374,6 +374,8 @@
     <Content Include="Views\Checkout\Complete.cshtml" />
     <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
     <Content Include="Views\Store\CategoryMenu.cshtml" />
+    <Content Include="Views\Store\getProducerList.cshtml" />
+    <Content Include="Views\Store\BrowseBrand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
