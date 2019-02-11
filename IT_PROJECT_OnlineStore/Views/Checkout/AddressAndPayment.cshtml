@@ -9,16 +9,17 @@
 		type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"
 		type="text/javascript"></script>
-
 @using (Html.BeginForm())
 {
 
 	<h2>Потврда и плаќање</h2>
-	
+
 	<fieldset>
-		<legend>Информации за достава</legend>
-		@Html.EditorForModel()
+		<legend>Внесете информации за достава</legend>
+		@Html.EditorForModel(new { htmlAttributes = new { @class = "form-control" } })
 	</fieldset>
 	<br />
-	<input class="btn btn" type="submit" value="Потврди" />
+	@Html.ActionLink("Потврди", "Completee", "Checkout", null, new { @class = "btn btn-primary" });
+
 }
+

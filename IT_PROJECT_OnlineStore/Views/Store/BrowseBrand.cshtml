@@ -3,23 +3,106 @@
 @{
 	ViewBag.Title = "BrowseBrand";
 }
+@{ if (Model.Name.Equals("Nike"))
+	{
+		<img src="~/Content/Images/nike-logo-png-download-nike-logo-png-images-transparent-gallery-advertisement-1024.png" width="200" height="100" />
+		<hr />
+	}
+	else if (Model.Name.Equals("Adidas"))
+	{
+		<img src="~/Content/Images/adidas.svg.png" width="200" height="100" />
+		<hr />
+	}
+	else if (Model.Name.Equals("Under Armour"))
+	{
+		<img src="~/Content/Images/2000px-Under_armour_logo.svg.png" width="200" height="100" />
+		<hr />
+	}
+	else if (Model.Name.Equals("Champion"))
+	{
+		<img src="~/Content/Images/champion-7-logo-png-transparent.png" width="250" height="150" />
+		<hr />
+	}
+}
 
-<h1> @Model.Name</h1>
+
+
+
+<link href="@Url.Content("~/Store/browsebrandcards.css")" rel="stylesheet" type="text/css" />
 
 <div class="container">
 	<div class="row">
 		@foreach (var c in Model.Items)
 		{
+			<div class="col-md-4" style="margin-bottom:30px;">
+				<figure class="card card-product">
+					<div class="img-wrap"><img src="@c.ItemUrl" width="150" height="150"></div>
+					<figcaption class="info-wrap">
+						<h4 class="title">@c.Title</h4>
+					</figcaption>
+					<div class="price-wrap h5">
+						<span class="price-new">Цена: @c.Price мкд.</span>
+					</div>
+					<div class="bottom-wrap">
 
-		<div class="col-md-4 col-sm-1 ">
-			<img src="@c.ItemUrl" width="220" height="160" class="thumbnail"/>
-			<div>
-				@Html.ActionLink("Add to cart", "AddToCart",
-				"ShoppingCart", new { id = c.ItemId },"")
-			</div>
-		</div>
+						@Html.ActionLink("Додади", "AddToCart",
+		"ShoppingCart", new { id = c.ItemId }, new { @class = "btn btn-primary" })
 
+
+						<!-- price-wrap.// -->
+					</div> <!-- bottom-wrap.// -->
+				</figure>
+			</div> <!-- col // -->
 		}
 
+	</div> <!-- row.// -->
+	<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="..." alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">Card title</h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="container">
+		<div class="row">
+			@foreach (var c in Model.Items)
+			{
+
+			<div class="col-md-4 col-sm-1 ">
+				<img src="@c.ItemUrl" width="220" height="160" class="thumbnail"/>
+				<div>
+					@Html.ActionLink("Add to cart", "AddToCart",
+					"ShoppingCart", new { id = c.ItemId },"")
+				</div>
+			</div>
+
+			}
+
+		</div>
+	</div>*@

@@ -34,7 +34,7 @@
 	Преглед на картичката
 </h3>
 <p class="button">
-	@Html.ActionLink("Потврди>> ", "AddressAndPayment", "Checkout")
+	@Html.ActionLink("Потврди ", "AddressAndPayment", "Checkout",null,new { @class = "btn btn-success" })
 </p>
 <div id="update-message">
 </div>
@@ -71,7 +71,7 @@
 			<td>
 				<a href="#" class="RemoveLink"
 				   data-id="@item.RecordID">
-					Избриши од кошничка
+					<i class="glyphicon glyphicon-trash"></i>
 				</a>
 			</td>
 		</tr>

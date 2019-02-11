@@ -17,21 +17,23 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
+				<img src="~/Content/Images/sports_logo_png_1293896.png" width="50" height="50"/>		
 				@Html.ActionLink("СпортСити", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 			</div>
-			
+
 			<div class="navbar-collapse collapse" id=".navbar-collapse">
 				<ul class="nav navbar-nav">
-					 @{Html.RenderAction("getProducerList", "Store"); }
-					 @*<li>@Html.ActionLink("Категори", "Index", "Store")</li> 
-						 za katergorii na berendovi
-						 *@ 
-					<li>@{Html.RenderAction("CartSummary", "ShoppingCart"); }</li>
+					@{Html.RenderAction("getProducerList", "Store"); }
+					@*<li>@Html.ActionLink("Категори", "Index", "Store")</li>
+		za katergorii na berendovi
+					*@
+
 					<li>@Html.ActionLink("За нас", "About", "Home")</li>
 					<li>@Html.ActionLink("Kонтакт", "Contact", "Home")</li>
+					<li>@{Html.RenderAction("CartSummary", "ShoppingCart"); }</li>
 
 				</ul>
-					
+
 				@Html.Partial("_LoginPartial")
 			</div>
 		</div>
@@ -40,10 +42,110 @@
 	<div class="container body-content">
 		@RenderBody()
 		<hr />
-		<footer>
-			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-		</footer>
 	</div>
+
+	<!-- Footer -->
+	<footer class="proba section footer-classic context-dark bg-image" style="background: #101010;">
+		<div class="container">
+			<div class="row row-30">
+				<div class="col-md-4 col-xl-5">
+					<div class="pr-xl-4">
+						<a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+						<p>Настојуваме да бидеме што попрецизни во описот на производот, фотографијата и самата цена, но не можеме да гарантираме дака сите информации се комплетни и без грешка. Сите прикажани производи на сајтот се дел од нашата понуда, но не се подразбира дека мораат да се достапни во секој момент. Достапноста на производите може да ја проверите и на телефонскиот број 02 3055 222.</p>
+						<!-- Rights-->
+						<p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>SportCity</span><span>. </span><span>All Rights Reserved.</span></p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h5>Контакт</h5>
+					<dl class="contact-list">
+						<dt>Адреса:</dt>
+						<dd>
+							Перо Наков 122а
+							1047 Скопје - Гази баба
+						</dd>
+					</dl>
+					<dl class="contact-list">
+						<dt>email:</dt>
+						<dd><a href="mailto:#">dkstudioin@gmail.com</a></dd>
+					</dl>
+					<dl class="contact-list">
+						<dt>Телефони за контакт:</dt>
+						<dd>
+							<a href="tel:#">+02 3055 222</a> <span>или</span> <a href="tel:#">+02 3055 222</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="col-md-4 col-xl-3">
+					<h5>Линкови</h5>
+					<ul class="nav-list">
+						<li><a href="#">За нас</a></li>
+						<li><a href="#">Кошничка</a></li>
+						<li><a href="#">Контакт</a></li>
+						<li><img src="~/Content/Images/cards.png" width="150" height="30" /></li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<style>
+	
+		.context-dark, .bg-gray-dark, .bg-primary {
+			color: rgba(255, 255, 255, 0.8);
+		}
+
+		.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+			color: #ffffff;
+		}
+
+		.nav-list li {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+			.nav-list li a:hover:before {
+				margin-left: 0;
+				opacity: 1;
+				visibility: visible;
+			}
+
+		ul, ol {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.social-inner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			padding: 23px;
+			font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.social-container .col {
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.nav-list li a:before {
+			content: "\f14f";
+			font: 400 21px/1 "Material Design Icons";
+			color: #4d6de6;
+			display: inline-block;
+			vertical-align: baseline;
+			margin-left: -28px;
+			margin-right: 7px;
+			opacity: 0;
+			visibility: hidden;
+			transition: .22s ease;
+		}
+	</style>
+	<!-- Footer -->
 
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/bootstrap")

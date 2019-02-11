@@ -12,6 +12,7 @@ namespace IT_PROJECT_OnlineStore.Controllers
     {
 		ApplicationDbContext dbstore = new ApplicationDbContext();
 		const string PromoCode = "50Popust";
+
 		// get method
         public ActionResult AddressAndPayment()
         {
@@ -24,6 +25,7 @@ namespace IT_PROJECT_OnlineStore.Controllers
 		[HttpPost]
 		public ActionResult AdressAndPayment(FormCollection values)
 		{
+
 			var order = new Order();
 			TryUpdateModel(order); // koga go loadirame userto od bazata
 								   // i ako ima izmeni od negova strana gi updetire
@@ -31,7 +33,7 @@ namespace IT_PROJECT_OnlineStore.Controllers
 			try
 			{
 				if (string.Equals(values["Промокод"], PromoCode,
-					StringComparison.OrdinalIgnoreCase) == false )
+					StringComparison.OrdinalIgnoreCase) == false)
 				{
 					return View(order);
 				}
@@ -46,9 +48,9 @@ namespace IT_PROJECT_OnlineStore.Controllers
 
 					var cart = ShoppingCart.GetCart(this.HttpContext); // ja procesirame naracakta
 					cart.CreateOrder(order); // kreirame naracka
-					return RedirectToAction("Complete","Checkout", new { id = order.OrderId });  // i redirektira na complete akcijata
-																								 
-					
+					return RedirectToAction("Complete", "Checkout", new { id = order.OrderId });  // i redirektira na complete akcijata
+
+
 				}
 			}
 			catch
@@ -70,6 +72,11 @@ namespace IT_PROJECT_OnlineStore.Controllers
 			{
 				return View("Error");
 			}
+		}
+
+		public ActionResult Completee()
+		{
+			return View();
 		}
     }
 }
